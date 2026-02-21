@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Root</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        width: 400px;
+        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      input[type="text"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: rebeccapurple;
+        border: 2px solid rebeccapurple;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background-color: rebeccapurple;
+        color: #fff;
+      }
+      .result {
+        width: 400px;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+      }
+      .result p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input type="text" name="full_url" placeholder="Enter the URL" />
+      <button type="submit">Submit</button>
+    </form>
+    {% if full_url and short_url %}
+    <div class="result">
+      <p><strong>Original URL:</strong> {{ full_url }}</p>
+      <p><strong>Short URL:</strong> {{ short_url }}</p>
+    </div>
+    {% endif %}
+  </body>
+</html>
