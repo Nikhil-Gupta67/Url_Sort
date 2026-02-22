@@ -1,6 +1,11 @@
 from django.urls import path
-from root.views import index
+from . import views
 
 urlpatterns = [
-    path('', index, name='index'),
+
+    # home page
+    path('', views.index, name='index'),
+
+    # short url redirect
+    path('<str:short_url>/', views.redirect_url, name='redirect'),
 ]
