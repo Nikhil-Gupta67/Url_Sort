@@ -63,8 +63,12 @@
     </form>
     {% if full_url and short_url %}
     <div class="result">
-      <p><strong>Original URL:</strong> {{ full_url }}</p>
-      <p><strong>Short URL:</strong> {{ short_url }}</p>
+      <p>
+        <strong>Short URL:</strong>
+        <a href="/{{ short_url }}/" target="_blank">
+          http://127.0.0.1:8000/{{ short_url }}/
+        </a>
+      </p>
     </div>
     {% endif %}
   </body>
