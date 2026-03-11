@@ -1,4 +1,4 @@
-# EXP2 — Django Project
+# EXP2 — Django Project--
 
 A small Django project (EXP2) containing a sample app and project configuration used for development and learning.
 
